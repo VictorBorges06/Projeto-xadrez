@@ -1,17 +1,14 @@
 ﻿using System;
-using Tabuleiro;
+using tabuleiro;
+
 
 namespace Projeto_xadrez
 {
-    class Program
+     class Program
     {
         static void Main(string[] args){
 
-            Posicao P;
-
-            P = new Posicao(3, 4);
-
-            Console.WriteLine("A Posição é: " + P);
+            Tabuleiro tab = new Tabuleiro(8, 8);
 
             Console.ReadLine();
 
