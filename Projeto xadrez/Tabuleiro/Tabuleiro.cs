@@ -12,6 +12,9 @@
             pecas = new Peca[linhas, colunas]; // informando no contrutor qual o parametro que o vetor peças vai receber
         
         }
-
+         public Peca peca (int linhas, int coluna)
+        {
+            return pecas[linhas, coluna];
+        }
     }
 }
