@@ -27,7 +27,7 @@ namespace Xadrez__Jogo_{
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
-                if (tab.peca(pos) != null && tab.peca(pos). cor != cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
@@ -35,7 +35,7 @@ namespace Xadrez__Jogo_{
             }
 
             // Está lógica é para a Torre mover para baixo!
-            pos.definirValores(posicao.linha - 1, posicao.coluna);
+            pos.definirValores(posicao.linha + 1, posicao.coluna);
             while (tab.posicaoValida(pos) && podeMover(pos))
             {
                 mat[pos.linha, pos.coluna] = true;
@@ -68,7 +68,7 @@ namespace Xadrez__Jogo_{
                 {
                     break;
                 }
-                pos.coluna = pos.coluna -1;
+                pos.coluna = pos.coluna - 1;
             }
 
 

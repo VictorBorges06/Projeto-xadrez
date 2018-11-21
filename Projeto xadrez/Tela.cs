@@ -1,9 +1,44 @@
 ﻿using System;
+using System.Collections.Generic;
 using tabuleiro;
 using Xadrez__Jogo_;
 namespace Projeto_xadrez
 {
     class Tela {
+
+        public static void imprimirPartida(PartidaDeXadrez partida)
+        {
+            imprimirTabuleiro(partida.tab);
+            Console.WriteLine();
+            imprimirPecasCapturadas(partida);
+            Console.WriteLine();
+            Console.WriteLine("Turno: " + partida.turno);
+            Console.WriteLine("Aguardando a jogada da peça: " + partida.jogadorAtual);
+        }
+
+        public static void imprimirPecasCapturadas(PartidaDeXadrez partida)
+        {
+            Console.WriteLine("Peças Capturadas: ");
+            Console.Write("Brancas: ");
+            imprimirConjunto(partida.pecasCapturadas(Cor.Branca));
+            Console.WriteLine();
+            Console.Write("Pretas: ");
+            ConsoleColor aux = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            imprimirConjunto(partida.pecasCapturadas(Cor.Preta));
+            Console.ForegroundColor = aux;
+            Console.WriteLine();
+        }
+
+        public static void imprimirConjunto(HashSet<Peca> conjunto)
+        {
+            Console.Write("[");
+            foreach (Peca x in conjunto)
+            {
+                Console.Write(x + " ");
+            }
+            Console.Write("]");
+        }
 
         public static void imprimirTabuleiro(Tabuleiro tab)
         {
@@ -16,6 +51,7 @@ namespace Projeto_xadrez
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("  a b c d e f g h");
         }
              
             public static void imprimirTabuleiro(Tabuleiro tab, bool[,] posicoesPossiveis){
@@ -39,12 +75,11 @@ namespace Projeto_xadrez
                         Console.BackgroundColor = fundoOriginal;
                     }
                 Console.WriteLine();
+               
             }
-
-           
-            Console.WriteLine("  a b c d e f g h"); //Essa linha é para aparecer as listas igual no tabuleiro de xadrez
-                Console.BackgroundColor = fundoOriginal;
-            }
+ 
+            Console.BackgroundColor = fundoOriginal;
+        }
 
             public static Posicaoxadrez lerPosicaoXadrez() {
 
