@@ -14,6 +14,12 @@ namespace tabuleiro
             this.coluna = coluna;
         }
 
+        public void definirValores(int linha, int coluna) //Esse método serve para definir os valores da posicao da peça
+        {
+            this.linha = linha; 
+            this.coluna = coluna;
+        }
+
         public override string ToString() // ToString para poder informar o conteudo da classe pro usuario depois de instanciado
         {
             return linha 

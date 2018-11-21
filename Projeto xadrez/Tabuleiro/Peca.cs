@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    class Peca {
+    abstract class Peca {
 
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
@@ -15,9 +15,14 @@
             this.qntMovimentos = 0;
         }
 
+
+
         public void incrementarQntMovimentos() // Criado isso para poder inserir a quantidade de movimentos da peça
         {
             qntMovimentos++;
         }
+
+        public abstract bool[,] movimentosPossiveis(); 
+        //é abstrato pois precisa de uma peça especifica para determinado movimento
     }
 }
