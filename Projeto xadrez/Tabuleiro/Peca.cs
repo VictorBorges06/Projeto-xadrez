@@ -14,5 +14,10 @@
             this.cor = cor;
             this.qntMovimentos = 0;
         }
+
+        public void incrementarQntMovimentos() // Criado isso para poder inserir a quantidade de movimentos da peça
+        {
+            qntMovimentos++;
+        }
     }
 }

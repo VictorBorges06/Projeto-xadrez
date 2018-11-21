@@ -1,6 +1,6 @@
 ﻿using System;
 using tabuleiro;
-
+using Xadrez__Jogo_;
 namespace Projeto_xadrez
 {
     class Tela{
@@ -25,6 +25,15 @@ namespace Projeto_xadrez
             }
             Console.WriteLine("  a b c d e f g h"); //Essa linha é para aparecer as listas igual no tabuleiro de xadrez
         }
+
+        public static Posicaoxadrez lerPosicaoXadrez() {
+
+            string s = Console.ReadLine();
+            char coluna = s[0];
+            int linha = int.Parse(s[1] + "");
+            return new Posicaoxadrez(coluna, linha);
+        }
+
 
         public static void imprimirPeca(Peca peca)
         {

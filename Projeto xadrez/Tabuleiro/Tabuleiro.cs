@@ -38,6 +38,18 @@
             p.posicao = pos;
         }
 
+        public Peca retirarPeca(Posicao pos){ //Este método foi criado para retirar a peça capturada no jogo
+            if (peca(pos) == null){
+                return null;
+            }
+
+            Peca aux = peca(pos);
+            aux.posicao = null;
+            pecas[pos.linha, pos.coluna] = null; //Essa linha é para marcar que a posição onde estava a peça agora está vazia
+            return aux;
+        }
+
+
         public bool posicaoValida(Posicao pos){ //Este metodo foi criado para testar se a posicao e valida ou nao (8,8) e o tabuleiro
             if (pos.linha<0 || pos.linha>= linhas || pos.coluna<0 || pos.coluna >= colunas)
             {
