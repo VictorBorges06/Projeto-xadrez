@@ -38,11 +38,11 @@ namespace Projeto_xadrez
                         imprimirPeca(tab.peca(i, j));
                         Console.BackgroundColor = fundoOriginal;
                     }
-                    Console.WriteLine();
-                }
+                Console.WriteLine();
+            }
 
-
-                Console.WriteLine("  a b c d e f g h"); //Essa linha é para aparecer as listas igual no tabuleiro de xadrez
+           
+            Console.WriteLine("  a b c d e f g h"); //Essa linha é para aparecer as listas igual no tabuleiro de xadrez
                 Console.BackgroundColor = fundoOriginal;
             }
 

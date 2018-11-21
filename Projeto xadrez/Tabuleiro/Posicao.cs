@@ -16,7 +16,7 @@ namespace tabuleiro
 
         public void definirValores(int linha, int coluna) //Esse método serve para definir os valores da posicao da peça
         {
-            this.linha = linha; 
+            this.linha = linha;
             this.coluna = coluna;
         }
 
