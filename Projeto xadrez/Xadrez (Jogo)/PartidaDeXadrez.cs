@@ -70,10 +70,14 @@ namespace Xadrez__Jogo_
                 xeque = false;
             }
 
-
-
-            turno++;
-            mudaJogador();
+            if (testeXequemate(adversaria(jogadorAtual)))
+            {
+                terminada = true;
+            }
+            else {
+                turno++;
+                mudaJogador();
+            }    
         }
 
         public void validarPosicaoDeOrigem (Posicao pos) //Validação feita para as jogadas das peças, onde tem ou não peça
@@ -183,6 +187,37 @@ namespace Xadrez__Jogo_
             }
             return false;
         }
+
+        public bool testeXequemate(Cor cor) //Testando se uma determinada peça está em xequemate!
+        {
+            if (!estaEmXeque(cor))
+            {
+                return false;
+            }
+            foreach (Peca x in pecasEmjogo(cor))
+            {
+                bool[,] mat = x.movimentosPossiveis();
+                for (int i=0; i<tab.linhas; i++)
+                {
+                    for (int j=0; j<tab.colunas; j++)
+                    {
+                        if (mat[i, j])
+                        {
+                            Posicao destino = new Posicao(i, j);
+                            Peca pecaCapturada = executaMovimento(x.posicao, destino);
+                            bool testeXeque = estaEmXeque(cor);
+                            desfazMovimento(x.posicao, destino, pecaCapturada);
+                            if (!testeXeque)
+                            {
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+            return true;
+        }
+
 
 
         public void colocarNovaPeca(char coluna, int linha, Peca peca) //Coloca uma nova peça aonde não tem

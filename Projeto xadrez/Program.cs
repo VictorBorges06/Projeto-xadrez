@@ -42,7 +42,7 @@ namespace Projeto_xadrez
                         Console.ReadLine();
                     }
                 }
-                
+                Console.Clear();
                 Tela.imprimirTabuleiro(partida.tab);
             }
 
