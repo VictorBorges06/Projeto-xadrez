@@ -22,6 +22,11 @@
             qntMovimentos++;
         }
 
+        public void decrementarQntMovimentos() // Criado isso para poder decrementar a quantidade de movimentos da peça
+        {
+            qntMovimentos--;
+        }
+
         public bool existeMovimentosPossiveis(){ //Criado para validar a posição de origem
             bool[,] mat = movimentosPossiveis();
             for (int i=0; i<tab.linhas; i++)
